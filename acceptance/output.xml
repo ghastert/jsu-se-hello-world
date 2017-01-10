@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 2.9 (Jython 2.7.0 on java1.8.0_60)" generated="20170109 21:21:02.169">
+<suite source="C:\Users\Owner\Desktop\CS310\Assignment1and2\jsu-se-hello-world\acceptance\HelloWorldTests.txt" name="HelloWorldTests" id="s1">
+<test name="Say Hello" id="s1-t1">
+<kw library="HelloWorldKeywords" name="Greet Everyone">
+<status endtime="20170109 21:21:03.420" starttime="20170109 21:21:03.411" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20170109 21:21:03.425" starttime="20170109 21:21:03.394" status="PASS"></status>
+</test>
+<test name="Say Hello In Pig Latin" id="s1-t2">
+<kw library="HelloWorldKeywords" name="Reverse Greet Everyone">
+<status endtime="20170109 21:21:03.468" starttime="20170109 21:21:03.460" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20170109 21:21:03.477" starttime="20170109 21:21:03.439" status="PASS"></status>
+</test>
+<test name="Make Sure You're Saying Hello" id="s1-t3">
+<kw library="HelloWorldKeywords" name="Greet Everyone">
+<assign>
+<var>${result}</var>
+</assign>
+<msg level="INFO" timestamp="20170109 21:21:03.528">${result} = hello world</msg>
+<status endtime="20170109 21:21:03.530" starttime="20170109 21:21:03.516" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>hello world</arg>
+</arguments>
+<status endtime="20170109 21:21:03.551" starttime="20170109 21:21:03.534" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20170109 21:21:03.557" starttime="20170109 21:21:03.498" status="PASS"></status>
+</test>
+<test name="Make A Test That Fails" id="s1-t4">
+<kw library="HelloWorldKeywords" name="Reverse Greet Everyone">
+<assign>
+<var>${result}</var>
+</assign>
+<msg level="INFO" timestamp="20170109 21:21:03.587">${result} = dlrow olleh</msg>
+<status endtime="20170109 21:21:03.589" starttime="20170109 21:21:03.578" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>hello world</arg>
+</arguments>
+<msg level="FAIL" timestamp="20170109 21:21:03.612">dlrow olleh != hello world</msg>
+<status endtime="20170109 21:21:03.617" starttime="20170109 21:21:03.596" status="FAIL"></status>
+</kw>
+<status critical="yes" endtime="20170109 21:21:03.626" starttime="20170109 21:21:03.565" status="FAIL">dlrow olleh != hello world</status>
+</test>
+<status endtime="20170109 21:21:03.639" starttime="20170109 21:21:02.216" status="FAIL"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="1">Critical Tests</stat>
+<stat pass="3" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="1" name="HelloWorldTests" id="s1">HelloWorldTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
